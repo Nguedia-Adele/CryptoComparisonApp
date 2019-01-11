@@ -1,0 +1,28 @@
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Symbol</th>
+				<th>Fullname</th>
+				<th>Price (USD)</th>
+				<th>% Change in 24hrs </th>
+				<th>% Change in 7 days</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let coin of coins let i= index">
+				<td> {{i+1}} </td>
+				<td> {{ coin.symbol }} </td>
+				<td> {{ coin.name }} </td>
+				<td> {{fiat.toUpperCase()}} {{ coin['price_'+fiat] }} </td>
+				<td> {{ coin.percent_change_24h }} </td>
+				<td> {{ coin.percent_change_7d }} </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div *ngIf="!coins">
+	{{noDataMsg || 'Nothing to display'}}
+</div>
