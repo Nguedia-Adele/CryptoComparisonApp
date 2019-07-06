@@ -43,7 +43,7 @@ jobs:
 
       - run: 
           name: test
-          command: npm run test -- --single-run --no-progress
+          command: npm run test -- --no-progress
 
       - run:
           name: build
