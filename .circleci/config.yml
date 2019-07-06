@@ -43,7 +43,11 @@ jobs:
 
       - run: 
           name: test
-          command: npm run test -- --no-progress
+          command: npm run test
+
+      - run:
+          name: update
+          command: npm update caniuse-lite browserslist
 
       - run:
           name: build
